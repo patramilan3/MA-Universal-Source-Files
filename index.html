@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Baloo+Tamma+2:wght@400;500;600;700;800&family=Indie+Flower&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/png" href="img/favicon.png" />
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+    <!-- Title -->
+    <title>
+      MA Universal &mdash; The way to become one with the universe is to trust
+      it
+    </title>
+    <script
+      src="https://code.jquery.com/jquery-3.7.0.min.js"
+      integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g="
+      crossorigin="anonymous"
+    ></script>
+    
+    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1037366/three.js"></script>
+    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1037366/CanvasRenderer.js"></script>
+    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1037366/Projector.js"></script>
+    
+   
+    
+  </head>
+
+  <body class="container">
+    <!-- side na -->
+    <aside class="sidebar">
+      <div class="sidebar__logo">
+        <img src="img/ma_background.jpg" alt="MA Logo" />
+      </div>
+      <div class="sidebar__content">
+        <ul class="sidebar__content--social">
+          <a href=""><i class="fa-regular fa-m"></i></a>
+          <a href="#"><i class="fa-regular fa-a"></i></a>
+          <a href="#"><i class="fa-regular fa-u"></i></a>
+          <a href="#"><i class="fa-regular fa-n"></i></a>
+          <a href="#"><i class="fa-regular fa-i"></i></a>
+          <a href="#"><i class="fa-regular fa-v"></i></a>
+          <a href="#"><i class="fa-regular fa-e"></i></a>
+          <a href="#"><i class="fa-regular fa-r"></i></a>
+          <a href="#"><i class="fa-regular fa-s"></i></a>
+          <a href="#"><i class="fa-regular fa-a"></i></a>
+          <a href="#"><i class="fa-regular fa-l"></i></a>
+        </ul>
+      </div>
+    </aside>
+    <!-- Header Nav -->
+    <header class="header">
+      <nav id="header__main-nav">
+      <div class="header__main-nav--hamburger">
+        <div class="line line-1"></div>
+        <div class="line line-2"></div>
+        <div class="line line-3"></div>
+      </div>
+      <ul class="header__main-nav--links">
+        <!-- <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Choose Us</a></li>
+        <li><a href="#">Team</a></li>
+        <li><a href="#">Contact</a></li> -->
+      </ul>
+    </nav>
+    </header>
+    <!-- show case -->
+    <section class="showcase" id="showcase">
+      <img src="img/ma_planet.png" alt="MA Planet" />
+      <div class="showcase__content">
+        <ul class="showcase__content--title">
+          <li>M</li>
+          <li>A</li>
+          <li>U</li>
+          <li>N</li>
+          <li>I</li>
+          <li>V</li>
+          <li>E</li>
+          <li>R</li>
+          <li>S</li>
+          <li>A</li>
+          <li>L</li>
+        </ul>
+        <p class="showcase__content--para">
+         We are coming soon.........
+        </p>
+      </div>
+    </section>
+
+    
+    <!-- footer section -->
+    <footer class="footer">
+    <div class="footer--display">
+    <div class="footer-top-grid">
+      <!-- --company information -->
+      <div class="footer-top-grid-companyinfo">
+        <div class="footer-top-grid-companyinfo__image">
+        <img src="img/ma_background.jpg" alt="MA Footer">
+        </div>
+        <div class="footer-top-grid-companyinfo__content">
+        <h3>MA Universal</h3>
+        </div>
+      </div>
+      <!-- --Mail Information -->
+      <div class="footer-top-grid-mailinfo">
+        <div class="footer-top-grid-mailinfo__image">
+          <a href="javascript:void(0);"><i class="fa-sharp fa-solid fa-envelope"></i></a>
+        </div>
+        <div class="footer-top-grid-mailinfo__text">
+          Mail Us
+        </div>
+        <div class="footer-top-grid-mailinfo__content">
+         Info@mauniversal.com
+        </div>
+      </div>
+      <!-- --Contact Information -->
+      <div class="footer-top-grid-contactinfo">
+       <div class="footer-top-grid-contactinfo__image">
+        <a href="javascript:void(0);"><i class="fa-solid fa-phone fa-beat"></i></a>
+       </div>
+       <div class="footer-top-grid-contactinfo__text">
+        Call Us
+       </div>
+       <div class="footer-top-grid-contactinfo__content">
+        + 91 8007910832
+       </div>
+      </div>
+      <!-- <div class="footer-top-grid-locationinfo">
+      <div class="footer-top-grid-locationinfo__image">
+        <a href="javascript:void(0);"><i class="fa-sharp fa-solid fa-location-pin"></i></a>
+      </div>
+      <div class="footer-top-grid-locationinfo__text">
+        Location
+        </div>
+      <div class="footer-top-grid-locationinfo__content">
+       Worli Mumbai ,400018
+      </div>
+      </div> -->
+    </div>
+    </div>
+
+    </footer>
+
+    <script id="rendered-js" type="text/javascript">
+      var camera, scene, renderer;
+
+      var texture_placeholder,
+        isUserInteracting = false,
+        onMouseDownMouseX = 0,
+        onMouseDownMouseY = 0,
+        lon = 90,
+        onMouseDownLon = 0,
+        lat = 0,
+        onMouseDownLat = 0,
+        phi = 0,
+        theta = 0,
+        target = new THREE.Vector3();
+
+      init();
+      animate();
+
+      function init() {
+        var container, mesh;
+        
+       container = document.getElementById("showcase");
+       
+       camera = new THREE.PerspectiveCamera(
+          75,
+          window.innerWidth / window.innerHeight,
+          1,
+          1100
+        );
+
+        scene = new THREE.Scene();
+
+        texture_placeholder = document.createElement("canvas");
+        texture_placeholder.width = 128;
+        texture_placeholder.height = 128;
+
+        var context = texture_placeholder.getContext("2d");
+        context.fillStyle = "rgb( 200, 200, 200 )";
+        context.fillRect(
+          0,
+          0,
+          texture_placeholder.width,
+          texture_placeholder.height
+        );
+
+        var materials = [
+          loadTexture(
+            "https://s3-us-west-2.amazonaws.com/s.cdpn.io/1037366/space4.jpg"
+          ), // right
+          loadTexture(
+            "https://s3-us-west-2.amazonaws.com/s.cdpn.io/1037366/space2.jpg"
+          ), // left
+          loadTexture(
+            "https://s3-us-west-2.amazonaws.com/s.cdpn.io/1037366/space1.jpg"
+          ), // top
+          loadTexture(
+            "https://s3-us-west-2.amazonaws.com/s.cdpn.io/1037366/space6.jpg"
+          ), // bottom
+          loadTexture(
+            "https://s3-us-west-2.amazonaws.com/s.cdpn.io/1037366/space3.jpg"
+          ), // back
+          loadTexture(
+            "https://s3-us-west-2.amazonaws.com/s.cdpn.io/1037366/space5.jpg"
+          ), // front
+        ];
+
+        mesh = new THREE.Mesh(
+          new THREE.BoxGeometry(300, 300, 300, 7, 7, 7),
+          new THREE.MultiMaterial(materials)
+        );
+        mesh.scale.x = -1;
+        scene.add(mesh);
+
+        for (var i = 0, l = mesh.geometry.vertices.length; i < l; i++) {
+          var vertex = mesh.geometry.vertices[i];
+
+          vertex.normalize();
+          vertex.multiplyScalar(550);
+        }
+
+        renderer = new THREE.CanvasRenderer();
+        renderer.setPixelRatio(window.devicePixelRatio);
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        container.appendChild(renderer.domElement);
+
+        document.addEventListener("mousedown", onDocumentMouseDown, false);
+        document.addEventListener("mousemove", onDocumentMouseMove, false);
+        document.addEventListener("mouseup", onDocumentMouseUp, false);
+        //document.addEventListener( 'wheel', onDocumentMouseWheel, false );
+
+        document.addEventListener("touchstart", onDocumentTouchStart, false);
+        document.addEventListener("touchmove", onDocumentTouchMove, false);
+
+        //
+
+        window.addEventListener("resize", onWindowResize, false);
+      }
+
+      function onWindowResize() {
+        camera.aspect = window.innerWidth / window.innerHeight;
+        camera.updateProjectionMatrix();
+
+        renderer.setSize(window.innerWidth, window.innerHeight);
+      }
+
+      function loadTexture(path) {
+        var texture = new THREE.Texture(texture_placeholder);
+        var material = new THREE.MeshBasicMaterial({
+          map: texture,
+          overdraw: 0.5,
+        });
+
+        var image = new Image();
+        image.onload = function () {
+          texture.image = this;
+          texture.needsUpdate = true;
+        };
+        image.src = path;
+
+        return material;
+      }
+
+      function onDocumentMouseDown(event) {
+        event.cancelable && event.preventDefault()
+
+        isUserInteracting = true;
+
+        onPointerDownPointerX = event.clientX;
+        onPointerDownPointerY = event.clientY;
+
+        onPointerDownLon = lon;
+        onPointerDownLat = lat;
+      }
+
+      function onDocumentMouseMove(event) {
+        if (isUserInteracting === true) {
+          lon =
+            (onPointerDownPointerX - event.clientX) * 0.1 + onPointerDownLon;
+          lat =
+            (event.clientY - onPointerDownPointerY) * 0.1 + onPointerDownLat;
+        }
+      }
+
+      function onDocumentMouseUp(event) {
+        isUserInteracting = false;
+      }
+
+      //	function onDocumentMouseWheel( event ) {
+
+      //	camera.fov += event.deltaY * 0.05;
+      //	camera.updateProjectionMatrix();
+
+      //	}
+
+      function onDocumentTouchStart(event) {
+        if (event.touches.length == 1) {
+          event.cancelable && event.preventDefault()
+
+          onPointerDownPointerX = event.touches[0].pageX;
+          onPointerDownPointerY = event.touches[0].pageY;
+
+          onPointerDownLon = lon;
+          onPointerDownLat = lat;
+        }
+      }
+
+      function onDocumentTouchMove(event) {
+        if (event.touches.length == 1) {
+          event.cancelable && event.preventDefault()
+
+          lon =
+            (onPointerDownPointerX - event.touches[0].pageX) * 0.1 +
+            onPointerDownLon;
+          lat =
+            (event.touches[0].pageY - onPointerDownPointerY) * 0.1 +
+            onPointerDownLat;
+        }
+      }
+
+      function animate() {
+        requestAnimationFrame(animate);
+        update();
+      }
+
+      function update() {
+        if (isUserInteracting === false) {
+          lon += 0.1;
+        }
+
+        lat = Math.max(-85, Math.min(85, lat));
+        phi = THREE.Math.degToRad(90 - lat);
+        theta = THREE.Math.degToRad(lon);
+
+        target.x = 500 * Math.sin(phi) * Math.cos(theta);
+        target.y = 500 * Math.cos(phi);
+        target.z = 500 * Math.sin(phi) * Math.sin(theta);
+
+        camera.position.copy(target).negate();
+        camera.lookAt(target);
+
+        renderer.render(scene, camera);
+      }
+      
+    </script>
+    <script src="togglemenus.js"></script>
+  </body>
+</html>
